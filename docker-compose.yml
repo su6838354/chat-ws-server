@@ -1,0 +1,52 @@
+haproxy:
+  build: ./haproxy
+  links:
+    - server-s1
+    - server-s2
+    - server-s3
+    - server-s4
+  ports:
+   - "3000:80"
+
+server-s1:
+  build: ./server
+  links:
+    - redis
+  expose:
+    - "3000"
+  environment:
+    - NAME=s1
+
+
+
+server-s2:
+  build: ./server
+  links:
+    - redis
+  expose:
+    - "3000"
+  environment:
+    - NAME=s2
+
+server-s3:
+  build: ./server
+  links:
+    - redis
+  expose:
+    - "3000"
+  environment:
+    - NAME=s3
+
+server-s4:
+  build: ./server
+  links:
+    - redis
+  expose:
+    - "3000"
+  environment:
+    - NAME=s4
+
+redis:
+  image: redis:alpine
+  expose:
+    - "6379"

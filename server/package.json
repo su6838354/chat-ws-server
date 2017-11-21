@@ -1,0 +1,48 @@
+{
+  "name": "chat-ws-server",
+  "version": "0.0.0",
+  "description": "chat server",
+  "main": "index.js",
+  "author": "suyuan",
+  "private": true,
+  "license": "BSD",
+  "dependencies": {
+    "express": "4.13.4",
+    "kafka-node": "2.2.3",
+    "log4js": "2.3.11",
+    "mysql": "2.15.0",
+    "pm2": "^2.7.2",
+    "redis": "^2.8.0",
+    "socket.io": "^1.7.2",
+    "socket.io-redis": "^3.0.0"
+  },
+  "scripts": {
+    "start": "npm run clean && node bin/development.js",
+    "production": "node bin/production.js",
+    "compile": "babel src/ --out-dir app/ --retain-lines --source-maps",
+    "clean": "rm -rf app/",
+    "dev": "npm start",
+    "start:pm2": "pm2 start pm2.json",
+    "logs": "pm2 logs"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-stage-0": "6.24.1",
+    "chokidar": "1.7.0",
+    "colors": "1.1.2",
+    "debug": "3.1.0"
+  },
+  "babel": {
+    "presets": [
+      "stage-0",
+      "env"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+    "apps" : [
+        {
+            "name"        : "ws-server",
+            "script"      : "./bin/production.js",
+            "watch"       : true,
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": 3000
+            },
+            "env_production" : {
+                "NODE_ENV": "production",
+                "PORT": 3000
+            },
+            "max_memory_restart" : "500M"
+        },
+        {
+            "name"        : "ws-server",
+            "script"      : "./bin/production.js",
+            "watch"       : true,
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": 3001
+            },
+            "env_production" : {
+                "NODE_ENV": "production",
+                "PORT": 3001
+            },
+            "max_memory_restart" : "500M"
+        }
+        ,
+        {
+            "name"        : "ws-server",
+            "script"      : "./bin/production.js",
+            "watch"       : true,
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": 3002
+            },
+            "env_production" : {
+                "NODE_ENV": "production",
+                "PORT": 3002
+            },
+            "max_memory_restart" : "500M"
+        },
+        {
+            "name"        : "ws-server",
+            "script"      : "./bin/production.js",
+            "watch"       : true,
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": 3003
+            },
+            "env_production" : {
+                "NODE_ENV": "production",
+                "PORT": 3003
+            },
+            "max_memory_restart" : "500M"
+        }
+    ]
+}
